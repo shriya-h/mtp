@@ -15,15 +15,15 @@ I have extended the models by implemented a Directed Acyclic Graph (DAG) based n
 
 ## Details of each notebook
 
-1. MTP1.ipynb: Cybsec_L, Cybsec_BW, Cyberport_SLP and Cyberport_UBP implemented using PuLP
+1. **MTP1.ipynb:** Cybsec_L, Cybsec_BW, Cyberport_SLP and Cyberport_UBP implemented using PuLP
 
-2. MTP2.ipynb: SCybsec_L(Pmax), SCybsec_L(Lmax), SCybsec_L(Qmin) and SCybsec_L(Smin) implemented using PuLP
+2. **MTP2.ipynb:** SCybsec_L(Pmax), SCybsec_L(Lmax), SCybsec_L(Qmin) and SCybsec_L(Smin) implemented using PuLP
 
-3. MTP.ipynb: All 8 models implemented using Gurobi 
+3. **MTP.ipynb:** All 8 models implemented using Gurobi 
 
-4. final_code.py: Gurobi implementation from MTP.ipynb in a single python file
+4. **final_code.py:** Gurobi implementation from MTP.ipynb in a single python file
 
-5. DAG.ipynb: A notebook trying different propagation constant algorithms on Cybsec_L
+5. **DAG.ipynb:** A notebook trying different propagation constant algorithms on Cybsec_L
 
 
 ## Disclaimer
