@@ -23,8 +23,9 @@ I have extended the models by implemented a Directed Acyclic Graph (DAG) based n
 
 4. final_code.py: Gurobi implementation from MTP.ipynb in a single python file
 
+5. DAG.ipynb: A notebook trying different propagation constant algorithms on Cybsec_L
+
 
 ## Disclaimer
 
 Some code may be incomplete, work-in-progress or broken. Run at your own risk.
-
