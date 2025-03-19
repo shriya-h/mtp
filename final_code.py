@@ -334,7 +334,7 @@ def cyberport_slp(c, d, V, q, P, r, g):
 
 
 
-def scybsecl_pmax(c, d, p, q, V, r, budget, H):
+def scybsecl_pmax(c, d, p, q, V, r, budget, g):
     num_nodes = len(V)
     num_safeguards = len(c)
     num_levels = len(c[0])
@@ -372,7 +372,7 @@ def scybsecl_pmax(c, d, p, q, V, r, budget, H):
     model.addConstr(quicksum(c[j][l] * u[i, j, l] for i in range(num_nodes) for j in range(num_safeguards) for l in range(num_levels)) <= budget)
 
     for i in range(num_nodes):
-        model.addConstr(p[i] * W[i] + quicksum(q * p[h] * W[h] for h in H[i]) <= Pmax)
+        model.addConstr(p[i] * W[i] + quicksum(g[h][i] * p[h] * W[h] for h in range(num_nodes)) <= Pmax)
 
     # Set objective
     model.setObjective(Pmax, GRB.MINIMIZE)
@@ -390,8 +390,8 @@ def scybsecl_pmax(c, d, p, q, V, r, budget, H):
 
     cybersecurity_investment = sum(c[j][l] * u[i, j, l].X for i in range(num_nodes) for j in range(num_safeguards) for l in range(num_levels))
     cybersecurity_investment_per_node = [(sum(c[j][l] * u[i, j, l].X for j in range(num_safeguards) for l in range(num_levels)))/1000 for i in range(num_nodes)]
-    breach_prob_per_node = [p[i] * W[i].X + sum(q * p[h] * W[h].X for h in H[i]) for i in range(num_nodes)]
-    exact_breach_prob_per_node = [ 1 - (1 - p[i] * W[i].X) * np.prod([(1 - q[(i, h)] * W[h].X) for h in H[i]]) for i in range(num_nodes)]
+    breach_prob_per_node = [p[i] * W[i].X + sum(g[h][i] * p[h] * W[h].X for h in range(num_nodes)) for i in range(num_nodes)]
+    exact_breach_prob_per_node = [ 1 - (1 - p[i] * W[i].X) * np.prod([(1 - g[h][i] * W[h].X) for h in range(num_nodes)]) for i in range(num_nodes)]
     minimized_value = model.ObjVal
     final_W_values =  [W[i].X for i in range(num_nodes)]
 
