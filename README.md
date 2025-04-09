@@ -25,7 +25,7 @@ I have extended the models by implemented a Directed Acyclic Graph (DAG) based n
 
 5. **DAG.ipynb:** A notebook trying different propagation constant algorithms on Cybsec_L
 
-6. **MTP_final_code.ipynb:**: Complete notebook with all code and plots, including comparisons
+6. **MTP_final_code.ipynb:** Complete notebook with all code and plots, including comparisons
 
 
 ## Disclaimer
