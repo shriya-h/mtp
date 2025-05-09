@@ -27,6 +27,8 @@ I have extended the models by implemented a Directed Acyclic Graph (DAG) based n
 
 6. **MTP_final_code.ipynb:** Complete notebook with all code and plots, including comparisons
 
+7. **paper_code_5_nodes.ipynb:** Notebook with the final code implemented on a 5 node graph for faster computation and results
+
 
 ## Disclaimer
 
